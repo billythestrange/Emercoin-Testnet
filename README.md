@@ -54,12 +54,11 @@ RPC_URL = "http://127.0.0.1:16662"
 Starte das Dashboard einfach über das Terminal:
 
 ```bash
-python3 emer-testchain_dashboard.py
+python3 emer-testchain_dashboard.py 
 ```
 
 ## Screenshot
-
-Hier kannst du später ein Bild deiner App einfügen
+*(Hier kannst du später ein Bild deiner App einfügen)*
 
 ## Lizenz
 
