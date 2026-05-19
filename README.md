@@ -58,8 +58,7 @@ python3 emer-testchain_dashboard.py
 ```
 
 ## Screenshot
-*(Hier kannst du später ein Bild deiner App einfügen)*
-
+ ![alt text](<Screenshot EMC-App for Testnet.png>)
 ## Lizenz
 
 Dieses Projekt ist unter der MIT-Lizenz veröffentlicht.
