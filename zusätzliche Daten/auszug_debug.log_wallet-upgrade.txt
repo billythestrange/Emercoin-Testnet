@@ -1,0 +1,143 @@
+2026-05-25T12:16:15Z Emercoin Core version v0.8.5emc (release build)
+2026-05-25T12:16:15Z Validating signatures for all blocks.
+2026-05-25T12:16:15Z Setting nMinimumChainTrust=0000000000000000000000000000000000000000000000000000000000000000
+2026-05-25T12:16:15Z ParameterInteraction: parameter interaction: -zapwallettxes enabled -> setting -persistmempool=0
+2026-05-25T12:16:15Z ParameterInteraction: parameter interaction: -zapwallettxes enabled -> setting -rescan=1
+2026-05-25T12:16:15Z Using the 'sse4(1way),sse41(4way),avx2(8way)' SHA256 implementation
+2026-05-25T12:16:15Z Using RdSeed as additional entropy source
+2026-05-25T12:16:15Z Using RdRand as an additional entropy source
+2026-05-25T12:16:15Z Default data directory /home/bitkiller/.emercoin
+2026-05-25T12:16:15Z Using data directory /mnt/hdd/sdb2/.emercoin_testnet/testnet3
+2026-05-25T12:16:15Z Config file: /mnt/hdd/sdb2/.emercoin_testnet/emertest.conf
+2026-05-25T12:16:15Z Using at most 26 automatic connections (1024 file descriptors available)
+2026-05-25T12:16:15Z Using 16 MiB out of 32/2 requested for signature cache, able to store 524288 elements
+2026-05-25T12:16:15Z Using 16 MiB out of 32/2 requested for script execution cache, able to store 524288 elements
+2026-05-25T12:16:15Z Using 2 threads for script verification
+2026-05-25T12:16:15Z scheduler thread start
+2026-05-25T12:16:15Z Allowing HTTP connections from: 127.0.0.0/8 ::1/128 
+2026-05-25T12:16:15Z Binding RPC on address ::1 port 16662
+2026-05-25T12:16:15Z Binding RPC on address 127.0.0.1 port 16662
+2026-05-25T12:16:15Z Initialized HTTP server
+2026-05-25T12:16:15Z HTTP: creating work queue of depth 16
+2026-05-25T12:16:15Z Config options rpcuser and rpcpassword will soon be deprecated. Locally-run instances may remove rpcuser to use cookie-based auth, or may be replaced with rpcauth. Please see share/rpcauth for rpcauth auth generation.
+2026-05-25T12:16:15Z Registering HTTP handler for / (exactmatch 1)
+2026-05-25T12:16:15Z Registering HTTP handler for /wallet/ (exactmatch 0)
+2026-05-25T12:16:15Z Starting HTTP server
+2026-05-25T12:16:15Z HTTP: starting 1 worker threads
+2026-05-25T12:16:15Z Entering http event loop
+2026-05-25T12:16:15Z Using wallet directory /mnt/hdd/sdb2/.emercoin_testnet/testnet3
+2026-05-25T12:16:15Z init message: Verifying wallet(s)...
+2026-05-25T12:16:15Z Using BerkeleyDB version Berkeley DB 4.8.30: (April  9, 2010)
+2026-05-25T12:16:15Z Using wallet /mnt/hdd/sdb2/.emercoin_testnet/testnet3/overall
+2026-05-25T12:16:15Z BerkeleyEnvironment::Open: LogDir=/mnt/hdd/sdb2/.emercoin_testnet/testnet3/overall/database ErrorFile=/mnt/hdd/sdb2/.emercoin_testnet/testnet3/overall/db.log
+2026-05-25T12:16:16Z init message: Loading banlist...
+2026-05-25T12:16:16Z Loaded 0 banned node ips/subnets from banlist.dat  128ms
+2026-05-25T12:16:16Z net: setting try another outbound peer=false
+2026-05-25T12:16:16Z Cache configuration:
+2026-05-25T12:16:16Z * Using 2.0 MiB for block index database
+2026-05-25T12:16:16Z * Using 24.8 MiB for transaction index database
+2026-05-25T12:16:16Z * Using 8.0 MiB for chain state database
+2026-05-25T12:16:16Z * Using 165.2 MiB for in-memory UTXO set (plus up to 286.1 MiB of unused mempool space)
+2026-05-25T12:16:16Z init message: Loading block index...
+2026-05-25T12:16:16Z LevelDB using max_open_files=1000 (default=1000)
+2026-05-25T12:16:16Z Opening LevelDB in /mnt/hdd/sdb2/.emercoin_testnet/testnet3/blocks/index
+2026-05-25T12:16:16Z leveldb: Recovering log #268
+2026-05-25T12:16:16Z leveldb: Level-0 table #270: started
+2026-05-25T12:16:16Z leveldb: Level-0 table #270: 29833 bytes OK
+2026-05-25T12:16:17Z leveldb: Delete type=0 #268
+2026-05-25T12:16:17Z leveldb: Delete type=3 #266
+2026-05-25T12:16:17Z Opened LevelDB successfully
+2026-05-25T12:16:17Z Using obfuscation key for /mnt/hdd/sdb2/.emercoin_testnet/testnet3/blocks/index: 0000000000000000
+2026-05-25T12:16:26Z leveldb: Compacting 2@0 + 8@1 files
+2026-05-25T12:16:26Z leveldb: Generated table #272@0: 528 keys, 129894 bytes
+2026-05-25T12:16:27Z leveldb: Generated table #273@0: 508 keys, 124882 bytes
+2026-05-25T12:16:27Z leveldb: Generated table #274@0: 534 keys, 131406 bytes
+2026-05-25T12:16:27Z leveldb: Generated table #275@0: 8691 keys, 2133121 bytes
+2026-05-25T12:16:27Z leveldb: Generated table #276@0: 6746 keys, 1654956 bytes
+2026-05-25T12:16:27Z leveldb: Generated table #277@0: 8688 keys, 2130846 bytes
+2026-05-25T12:16:28Z leveldb: Generated table #278@0: 8698 keys, 2133813 bytes
+2026-05-25T12:16:28Z leveldb: Generated table #279@0: 3807 keys, 933709 bytes
+2026-05-25T12:16:28Z leveldb: Compacted 2@0 + 8@1 files => 9372627 bytes
+2026-05-25T12:16:28Z leveldb: compacted to: files[ 0 8 45 0 0 0 0 ]
+2026-05-25T12:16:29Z LoadBlockIndexDB: last block file = 1
+2026-05-25T12:16:29Z LoadBlockIndexDB: last block file info: CBlockFileInfo(blocks=216106, size=108330469, heights=221732...437837, time=2022-03-23...2026-05-24)
+2026-05-25T12:16:29Z Checking all blk files are present...
+2026-05-25T12:16:29Z LoadBlockIndexDB(): synchronized checkpoint 0000000642cfda7d39a8281e1f8791ceb240ce2f5ed9082f60040fe4210c6a58
+2026-05-25T12:16:29Z LevelDB using max_open_files=1000 (default=1000)
+2026-05-25T12:16:29Z Opening LevelDB in /mnt/hdd/sdb2/.emercoin_testnet/testnet3/chainstate
+2026-05-25T12:16:29Z leveldb: Recovering log #284
+2026-05-25T12:16:29Z leveldb: Level-0 table #310: started
+2026-05-25T12:16:30Z leveldb: Level-0 table #310: 27216 bytes OK
+2026-05-25T12:16:30Z leveldb: Delete type=3 #282
+2026-05-25T12:16:30Z leveldb: Delete type=0 #284
+2026-05-25T12:16:30Z Opened LevelDB successfully
+2026-05-25T12:16:31Z Using obfuscation key for /mnt/hdd/sdb2/.emercoin_testnet/testnet3/chainstate: f5f8ed28bd7be0fe
+2026-05-25T12:16:31Z Loaded best chain: hashBestChain=b57f2497fca5deda2038db6cc9fef9c5fa4bd4e2e23078d8b7654ce94672604b height=437837 date=2026-05-24T19:41:50Z progress=1.000000 trust=00000000000000000000000000000000000000000000000000309fc181603f88
+2026-05-25T12:16:31Z init message: Rewinding blocks...
+2026-05-25T12:16:31Z WriteBatch memory usage: db=index, before=0.0MiB, after=0.0MiB
+2026-05-25T12:16:31Z Writing final batch of 0.00 MiB
+2026-05-25T12:16:31Z WriteBatch memory usage: db=chainstate, before=0.0MiB, after=0.0MiB
+2026-05-25T12:16:31Z Committed 1 changed transaction outputs (out of 1) to coin database...
+2026-05-25T12:16:31Z init message: Verifying blocks...
+2026-05-25T12:16:31Z Verifying last 6 blocks at level 3
+2026-05-25T12:16:31Z [0%]...[16%]...[33%]...[50%]...[66%]...[83%]...[99%]...[DONE].
+2026-05-25T12:16:31Z No coin database inconsistencies in last 6 blocks (12 transactions)
+2026-05-25T12:16:31Z  block index           15493ms
+2026-05-25T12:16:31Z Reading estimates: 190 buckets counting confirms up to 48 blocks
+2026-05-25T12:16:31Z Reading estimates: 190 buckets counting confirms up to 12 blocks
+2026-05-25T12:16:31Z Reading estimates: 190 buckets counting confirms up to 1008 blocks
+2026-05-25T12:16:31Z LevelDB using max_open_files=1000 (default=1000)
+2026-05-25T12:16:31Z Opening LevelDB in /mnt/hdd/sdb2/.emercoin_testnet/testnet3/indexes/txindex
+2026-05-25T12:16:32Z leveldb: Recovering log #212
+2026-05-25T12:16:32Z leveldb: Level-0 table #214: started
+2026-05-25T12:16:32Z leveldb: Level-0 table #214: 13339 bytes OK
+2026-05-25T12:16:33Z leveldb: Delete type=3 #210
+2026-05-25T12:16:33Z leveldb: Delete type=0 #212
+2026-05-25T12:16:33Z Opened LevelDB successfully
+2026-05-25T12:16:33Z Using obfuscation key for /mnt/hdd/sdb2/.emercoin_testnet/testnet3/indexes/txindex: 0000000000000000
+2026-05-25T12:16:33Z LevelDB using max_open_files=1000 (default=1000)
+2026-05-25T12:16:33Z Opening LevelDB in /mnt/hdd/sdb2/.emercoin_testnet/testnet3/indexes/nameindexV3
+2026-05-25T12:16:33Z txindex thread start
+2026-05-25T12:16:33Z txindex is enabled at height 437837
+2026-05-25T12:16:33Z txindex thread exit
+2026-05-25T12:16:33Z leveldb: Recovering log #52
+2026-05-25T12:16:33Z leveldb: Delete type=0 #52
+2026-05-25T12:16:33Z leveldb: Delete type=3 #51
+2026-05-25T12:16:33Z Opened LevelDB successfully
+2026-05-25T12:16:33Z Using obfuscation key for /mnt/hdd/sdb2/.emercoin_testnet/testnet3/indexes/nameindexV3: 0000000000000000
+2026-05-25T12:16:33Z init message: Zapping all transactions from wallet...
+2026-05-25T12:16:33Z BerkeleyEnvironment::Open: LogDir=/mnt/hdd/sdb2/.emercoin_testnet/testnet3/overall/database ErrorFile=/mnt/hdd/sdb2/.emercoin_testnet/testnet3/overall/db.log
+2026-05-25T12:16:34Z init message: Loading wallet...
+2026-05-25T12:16:34Z BerkeleyEnvironment::Open: LogDir=/mnt/hdd/sdb2/.emercoin_testnet/testnet3/overall/database ErrorFile=/mnt/hdd/sdb2/.emercoin_testnet/testnet3/overall/db.log
+2026-05-25T12:16:34Z [overall] Wallet File Version = 169900
+2026-05-25T12:16:34Z [overall] Keys: 0 plaintext, 0 encrypted, 0 w/ metadata, 0 total. Unknown wallet records: 0
+2026-05-25T12:16:35Z [overall] Allowing wallet upgrade up to 1
+2026-05-25T12:16:35Z Error: Cannot downgrade wallet
+2026-05-25T12:16:35Z [overall] Releasing wallet
+2026-05-25T12:16:35Z BerkeleyEnvironment::Flush: [/mnt/hdd/sdb2/.emercoin_testnet/testnet3/overall] Flush(false)
+2026-05-25T12:16:35Z BerkeleyEnvironment::Flush: Flushing wallet.dat (refcount = 0)...
+2026-05-25T12:16:35Z BerkeleyEnvironment::Flush: wallet.dat checkpoint
+2026-05-25T12:16:35Z BerkeleyEnvironment::Flush: wallet.dat detach
+2026-05-25T12:16:36Z BerkeleyEnvironment::Flush: wallet.dat closed
+2026-05-25T12:16:36Z BerkeleyEnvironment::Flush: Flush(false) took             690ms
+2026-05-25T12:16:36Z Interrupting HTTP server
+2026-05-25T12:16:36Z Shutdown: In progress...
+2026-05-25T12:16:36Z Unregistering HTTP handler for / (exactmatch 1)
+2026-05-25T12:16:36Z Unregistering HTTP handler for /wallet/ (exactmatch 0)
+2026-05-25T12:16:36Z Stopping HTTP server
+2026-05-25T12:16:36Z Waiting for HTTP worker threads to exit
+2026-05-25T12:16:36Z Waiting for HTTP event thread to exit
+2026-05-25T12:16:36Z Exited http event loop
+2026-05-25T12:16:36Z Stopped HTTP server
+2026-05-25T12:16:36Z scheduler thread interrupt
+2026-05-25T12:16:36Z Recorded 0 unconfirmed txs from mempool in 0s
+2026-05-25T12:16:36Z WriteBatch memory usage: db=index, before=0.0MiB, after=0.0MiB
+2026-05-25T12:16:36Z Writing final batch of 0.00 MiB
+2026-05-25T12:16:36Z WriteBatch memory usage: db=chainstate, before=0.0MiB, after=0.0MiB
+2026-05-25T12:16:36Z Committed 0 changed transaction outputs (out of 0) to coin database...
+2026-05-25T12:16:36Z WriteBatch memory usage: db=txindex, before=0.0MiB, after=0.0MiB
+2026-05-25T12:16:37Z WriteBatch memory usage: db=index, before=0.0MiB, after=0.0MiB
+2026-05-25T12:16:37Z Writing final batch of 0.00 MiB
+2026-05-25T12:16:37Z WriteBatch memory usage: db=chainstate, before=0.0MiB, after=0.0MiB
+2026-05-25T12:16:37Z Committed 0 changed transaction outputs (out of 0) to coin database...
+2026-05-25T12:16:37Z Shutdown: done

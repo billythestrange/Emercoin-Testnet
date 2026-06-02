@@ -1,0 +1,12 @@
+Hey Gemini, ich habe eine Emercoin Full-Node Wallet welche im Testnetz läuft. eine wallet ist bereits erstellt und auch adressen. ich verwende die software nur über befehlszeile und nicht über GUI (emercoin-qt), also nur den Daemon und CLI. Jetzt hätte ich aber gerne ein kleines grafisches Programm, dass mir in meinem Ubuntu 24.04. LTS Betriebssystem die Anzeige,Datenabruf und Bedienung vereinfacht und übersichtlich die wichtigen Informationen anzeigt. Kannst du mir helfen ein solches tool zu programmieren?
+
+Ich möchte, dass die App alle meine im Testnetz existierenden Adressen anzeigt und auf Wunsch zu jeder Adresse dessen bereits Ein - und Ausgegangenen Transaktionen. Als Darstellung in der App wäre vielleicht das hinzufügen eines neues "Tabs" bzw. "Reiters" gut um die Übersichtlichkeit zu wahren und Funktionen zu gliedern.
+
+ich möchte bitte, dass du noch weitere Funktionen in die App implementierst. Als erstes einen weiteren "Tab" mit allen vorhandenen Informationen zu den aktuell mit der Testnet-Node verbundenen Peers. Als zweites erweitere bitte die Mainpage der App und gibzusätzliche Daten zur Blockchain aus. Zum Beispiel wie alt ist der aktuell höchste Block (mm:ss), was ist die derzeitige durchschnittliche Blockzeit (auf Basis der letzten 5-15 Blöcke), wie viel Festplattenspeicher belegt die Testnet Blockchain auf meiner HDD?
+
+Bitte erweitere die Emercoin Testnetz-App um weitere Funktionen. Füge einen zusätzlichen Tab für die Ausgabe der debug.log Datei. Es sollen die letzten 30 Minuten der Log Datei angezeigt werden aber maximal 3500 Zeilen. Der angezeigte Text soll ein Highlighting Bestimmte Schlüsselwörter haben, welche farblich hervorgehoben ein sollen: (Rot für Fehler und disconnecting Nodes, Hellgrün für neue Blöcke, Hellblau für neue Node Verbindungen, gelb für "Successfully reconstructed block", dunkelgrün für "AcceptToMemoryPool").
+
+Icon in Statusleiste um ausführen der App
+mehr infos über die angezeigten transaktionen (txid, type, version, size,vsize,weight, wie viele vin und vout)
+
+
