@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Emercoin Testnet
+Comment=Dashboard für Emercoin Testnet Node
+Exec=python3 /home/bitkiller/Projekte/VisualStudioCode/Emercoin-Testnet/emer-testchain_dashboard.py
+Icon=/home/bitkiller/Projekte/VisualStudioCode/Emercoin-Testnet/blockchain_wallet2.png
+Path=/home/bitkiller/Projekte/VisualStudioCode/Emercoin-Testnet/
+Terminal=false
+Categories=Network;Utility;
