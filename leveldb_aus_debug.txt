@@ -1,0 +1,23 @@
+2026-05-31T13:06:58Z leveldb: Generated table #586@1: 30662 keys, 2153636 bytes
+2026-05-31T13:06:59Z leveldb: Generated table #587@1: 28736 keys, 2150919 bytes
+2026-05-31T13:06:59Z leveldb: Generated table #588@1: 28458 keys, 2152655 bytes
+2026-05-31T13:06:59Z leveldb: Generated table #589@1: 30777 keys, 2156886 bytes
+2026-05-31T13:06:59Z leveldb: Generated table #590@1: 29703 keys, 2153492 bytes
+2026-05-31T13:06:59Z leveldb: Generated table #591@1: 29903 keys, 2155055 bytes
+2026-05-31T13:07:00Z leveldb: Generated table #592@1: 31653 keys, 2156727 bytes
+2026-05-31T13:07:00Z leveldb: Generated table #593@1: 29160 keys, 2160639 bytes
+2026-05-31T13:07:00Z leveldb: Generated table #594@1: 31279 keys, 2155607 bytes
+2026-05-31T13:07:00Z leveldb: Generated table #595@1: 25839 keys, 1826022 bytes
+2026-05-31T13:07:00Z leveldb: Compacted 1@1 + 10@2 files => 21221638 bytes
+2026-05-31T13:07:00Z leveldb: compacted to: files[ 0 1 34 0 0 0 0 ]
+2026-05-31T13:07:00Z leveldb: Delete type=2 #563
+2026-05-31T13:07:00Z leveldb: Delete type=2 #556
+2026-05-31T13:07:00Z leveldb: Delete type=2 #557
+2026-05-31T13:07:00Z leveldb: Delete type=2 #555
+2026-05-31T13:07:00Z leveldb: Delete type=2 #553
+2026-05-31T13:07:00Z leveldb: Delete type=2 #549
+2026-05-31T13:07:00Z leveldb: Delete type=2 #552
+2026-05-31T13:07:00Z leveldb: Delete type=2 #554
+2026-05-31T13:07:00Z leveldb: Delete type=2 #558
+2026-05-31T13:07:00Z leveldb: Delete type=2 #550
+2026-05-31T13:07:00Z leveldb: Delete type=2 #551

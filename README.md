@@ -4,11 +4,23 @@ Ein leichtgewichtiges Python-basiertes Dashboard zur Überwachung und Verwaltung
 
 ## Funktionen
 
-- **Echtzeit-Guthaben:** Zeigt den aktuellen Kontostand (EMC) der Wallet an.
-- **Blockchain-Status:** Anzeige der aktuellen Blockhöhe.
-- **Versionsinfo:** Anzeige der installierten Emercoin-Core Version.
-- **Verbindungsprüfung:** Visualisierung des Verbindungsstatus zum lokalen Daemon.
-- **Aktualisierung:** Manueller Refresh-Button zum Abrufen der neuesten Daten via RPC.
+Das Dashboard ist in mehrere spezialisierte Tabs unterteilt:
+
+- **Übersicht:** 
+    - Echtzeit-Guthaben und Verbindungsstatus.
+    - Blockchain-Metriken: Aktuelle Blockhöhe, Alter des letzten Blocks (mm:ss) und die durchschnittliche Blockzeit (basierend auf den letzten 10 Blöcken).
+    - Speicherplatzverbrauch der Testnet-Blockchain auf der Festplatte.
+- **Adressen & TX:** 
+    - Auflistung aller Wallet-Adressen.
+    - Anzeige der Transaktionshistorie für eine ausgewählte Adresse.
+    - **Detaillierte TX-Info:** Per Klick lassen sich technische Details einer Transaktion (Size, vSize, Weight, Inputs/Outputs) sowie der rohe JSON-Output anzeigen.
+- **Peers:** 
+    - Übersicht aller aktuell verbundenen Netzwerkknoten.
+    - Anzeige von IP, Datenübertragung (Up/Down), Verbindungsdauer, Ping und beworbenen Netzwerk-Services.
+- **Logs:** 
+    - Integrierter Viewer für die `debug.log`.
+    - Filtert automatisch Dashboard-eigenen RPC-Traffic heraus.
+    - **Farb-Highlighting:** Visuelle Unterscheidung von Fehlern (Rot), neuen Blöcken (Grün), Verbindungen (Blau) und Mempool-Aktivitäten.
 
 ## Voraussetzungen
 
@@ -22,6 +34,7 @@ server=1
 rpcuser=dein_benutzername
 rpcpassword=dein_passwort
 rpcport=16662
+testnet=1
 ```
 
 ### 2. System-Abhängigkeiten (Ubuntu)
