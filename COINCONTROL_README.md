@@ -5,9 +5,12 @@ Ein benutzerfreundliches Kommandozeilen-Programm zur Erstellung von Emercoin-Tra
 ## 🎯 Features
 
 - **Interaktive Benutzeroberfläche** – Schritt-für-Schritt Abfrage aller benötigten Parameter
-- **UTXO-Management** – Wähle einzelne UTXOs, alle auf einmal oder filtere nach Betrag
+- **UTXO-Management** – Wähle **mehrere UTXOs** auf einmal aus! (Einzeln, alle, oder nach Betrag)
 - **Intelligente Gebührenberechnung** – Automatische Schätzung der Transaktionsgröße und Gebühren
-- **Change-Management** – Flexible Change-Adresse (gleich wie Quelle oder manuell)
+- **Change-Management** – 3 flexible Optionen:
+  - Standard-Notfall-Adresse (nie die Adresse vergessen!)
+  - Quell-Adresse
+  - Benutzerdefinierte Adresse
 - **Sicherheit** – Bestätigungsdialog vor dem Signieren und Senden
 - **Fehlerbehandlung** – Validierung aller Eingaben und aussagekräftige Fehlermeldungen
 
@@ -55,23 +58,35 @@ Das Programm führt dich interaktiv durch folgende Schritte:
 - Gib den zu sendenden Betrag in EMC ein
 - Die maximale Obergrenze ist das Guthaben der Quell-Adresse
 
-#### 5️⃣ UTXOs manuell wählen
-Das Programm zeigt alle verfügbaren UTXOs für die Quell-Adresse an. Du kannst:
+#### 5️⃣ UTXOs manuell wählen (Mehrere möglich!)
+Das Programm zeigt alle verfügbaren UTXOs für die Quell-Adresse an. Du kannst **mehrere UTXOs auswählen** und kombinieren:
 
 **Modus 1: Einzelne UTXOs auswählen**
 - Wähle jedes UTXO einzeln nach Nummer
 - Bestätigung mit "fertig" wenn genug ausgewählt
+- ✨ **Mehrere UTXOs auf einmal!**
 
 **Modus 2: Alle UTXOs verwenden**
 - Nutze sofort alle verfügbaren UTXOs
+- ✨ **Automatisch alle Münzen in einer Transaktion kombiniert**
 
 **Modus 3: Nach Betrag filtern**
 - Gib einen Zielbetrauf an
 - Das Programm sortiert UTXOs und nimmt die größten zuerst
+- ✨ **Intelligente Kombinationen mehrerer UTXOs**
 
-#### 6️⃣ Change-Adresse konfigurieren
-- **Option A:** Change geht zurück auf die Quell-Adresse (schnell)
-- **Option B:** Change-Adresse manuell eingeben (fortgeschrittene Nutzung)
+#### 6️⃣ Change-Adresse konfigurieren (Mit Notfall-Default!)
+Das Programm bietet jetzt **3 Optionen** für das Wechselgeld:
+
+- **Option 1:** Standard-Notfall-Adresse verwenden (automatisch vorausgefüllt)
+  - `te1q5h863l5llty665rnhz2a6vttjgjqpyjhgy3h29`
+  - Perfekt falls du die Adresse vergisst einzutragen
+  
+- **Option 2:** Change geht zurück auf die Quell-Adresse (schnell)
+  - Wechselgeld kommt da an, wo es herkommt
+  
+- **Option 3:** Change-Adresse manuell eingeben (fortgeschrittene Nutzung)
+  - Mit Standard-Vorschlag zum schnellen Überschreiben
 
 #### 7️⃣ Transaktion bestätigen
 - Überblick über alle Transaktionsdetails
@@ -87,15 +102,28 @@ Das Programm zeigt alle verfügbaren UTXOs für die Quell-Adresse an. Du kannst:
 
 ## ⚙️ Konfiguration
 
-Die RPC-Einstellungen befinden sich oben im Skript:
+Die RPC-Einstellungen und Standard Change-Adresse befinden sich oben im Skript:
 
 ```python
 RPC_USER = "emma"
 RPC_PASS = "testnetemma"
 RPC_URL = "http://127.0.0.1:16662"  # Standard-Testnet-Port
+
+# Standard Change-Adresse (Notfall/Fallback für Wechselgeld)
+DEFAULT_CHANGE_ADDRESS = "te1q5h863l5llty665rnhz2a6vttjgjqpyjhgy3h29"
 ```
 
 Diese sollten mit den Einstellungen in `emer-testchain_dashboard.py` übereinstimmen.
+
+### Die Standard Change-Adresse anpassen
+
+Falls du eine andere Notfall-Adresse verwenden möchtest, ändere die `DEFAULT_CHANGE_ADDRESS`:
+
+```python
+DEFAULT_CHANGE_ADDRESS = "deine-adresse-hier"
+```
+
+Diese wird als **Option 1** während der Transaktionserstellung angeboten und kann jederzeit überschrieben werden.
 
 ## 🔍 Beispiel-Workflow
 
@@ -154,7 +182,14 @@ Benötigter Betrag (Coins werden nach Größe sortiert): 15
 
 ✅ Ausgewählt: 2 UTXOs, Gesamtbetrag: 40.12345678 EMC
 
-Change-Adresse = Quell-Adresse verwenden? (j/n): j
+📌 Change-Adresse (Wechselgeld)
+Optionen:
+  1 = Standard-Notfall-Adresse verwenden
+  2 = Quell-Adresse verwenden
+  3 = Andere Adresse eingeben
+
+Wahl (1-3): 1
+✅ Nutze Standard: te1q5h863l5llty665rnhz2a6vttjgjqpyjhgy3h29
 
 📝 Transaktionsdetails:
    Inputs: 2

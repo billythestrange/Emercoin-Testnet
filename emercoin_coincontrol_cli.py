@@ -17,6 +17,10 @@ RPC_USER = "emma"
 RPC_PASS = "testnetemma"
 RPC_URL = "http://127.0.0.1:16662"  # Standard-Testnet-Port
 
+# Standard Change-Adresse (Notfall/Fallback für Wechselgeld)
+# Falls beim Transaktionsprozess keine Change-Adresse eingegeben wird, wird diese verwendet
+DEFAULT_CHANGE_ADDRESS = "te1q5h863l5llty665rnhz2a6vttjgjqpyjhgy3h29"
+
 
 class EmercoinRPC:
     """Wrapper für Emercoin JSON-RPC Kommunikation"""
@@ -98,10 +102,25 @@ class CoinControlCLI:
         """Formatiert einen EMC-Betrag"""
         return f"{amount:.8f} EMC"
 
-    def prompt_address(self, prompt_text: str) -> Optional[str]:
-        """Fragt eine Adresse ab und validiert sie"""
+    def prompt_address(self, prompt_text: str, default: Optional[str] = None) -> Optional[str]:
+        """Fragt eine Adresse ab und validiert sie (mit optionalem Default)"""
         while True:
-            addr = input(f"\n{prompt_text}: ").strip()
+            if default:
+                prompt = f"{prompt_text}\n[Default: {default}] (Enter = Standard, oder neue Adresse eingeben)"
+                addr = input(f"\n{prompt}: ").strip()
+                
+                # Wenn Benutzer nur Enter drückt, nutze Default
+                if not addr:
+                    # Validiere den Default
+                    result = self.rpc.call("validateaddress", [default])
+                    if result and result.get("isvalid"):
+                        self.print_success(f"Nutze Standard: {default}")
+                        return default
+                    else:
+                        self.print_error(f"Standard-Adresse ist ungültig! Bitte gib eine Adresse ein")
+                        continue
+            else:
+                addr = input(f"\n{prompt_text}: ").strip()
             
             if not addr:
                 self.print_error("Adresse ist erforderlich!")
@@ -476,14 +495,34 @@ class CoinControlCLI:
             sys.exit(1)
         
         # Change-Adresse
-        use_same = self.prompt_yes_no("Change-Adresse = Quell-Adresse verwenden?")
+        self.print_section("Change-Adresse (Wechselgeld)")
+        print("Optionen:")
+        print("  1 = Standard-Notfall-Adresse verwenden")
+        print("  2 = Quell-Adresse verwenden")
+        print("  3 = Andere Adresse eingeben")
         
-        if use_same:
-            change_addr = source_addr
-        else:
-            change_addr = self.prompt_address("Change-Adresse eingeben")
-            if not change_addr:
-                sys.exit(1)
+        while True:
+            choice = input("\nWahl (1-3): ").strip()
+            
+            if choice == "1":
+                change_addr = DEFAULT_CHANGE_ADDRESS
+                self.print_success(f"Nutze Standard: {change_addr}")
+                break
+            elif choice == "2":
+                change_addr = source_addr
+                self.print_success(f"Nutze Quell-Adresse: {source_addr}")
+                break
+            elif choice == "3":
+                change_addr = self.prompt_address(
+                    "Change-Adresse eingeben",
+                    default=DEFAULT_CHANGE_ADDRESS
+                )
+                if not change_addr:
+                    sys.exit(1)
+                break
+            else:
+                self.print_error("Bitte wähle 1, 2 oder 3!")
+        
         
         # Transaktion erstellen
         tx_hex = self.create_transaction(

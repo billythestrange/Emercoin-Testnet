@@ -22,10 +22,11 @@ Das Hauptprogramm mit voller Coin-Control-Funktionalität.
 **Funktionen:**
 - RPC-Kommunikation mit Emercoin-Daemon
 - Interaktive Parameter-Eingaben mit Validierung
-- Adressen-Verwaltung und UTXO-Listing
-- 3 verschiedene UTXO-Auswahlmodi (einzeln, alle, nach Betrag)
-- Intelligente Gebührenberechnung
-- Raw-Transaction-Erstellung
+- **Adressen-Verwaltung und UTXO-Listing für mehrere Münzen**
+- **3 verschiedene UTXO-Auswahlmodi** (einzeln, alle, nach Betrag)
+- **Default Change-Adresse mit Notfall-Fallback**
+- Intelligente Gebührenberechnung (berücksichtigt Anzahl der Inputs)
+- Raw-Transaction-Erstellung mit mehreren Inputs
 - Transaktion-Signierung und -Versand
 - Umfangreiche Fehlerbehandlung
 
@@ -88,34 +89,27 @@ Quick-Start-Anleitung für schnellen Einstieg.
 
 ---
 
-## 🏗️ Architektur
+## 🏗️ Architektur & Neue Features
 
+### Default Change Address (Notfall-Fallback)
+```python
+DEFAULT_CHANGE_ADDRESS = "te1q5h863l5llty665rnhz2a6vttjgjqpyjhgy3h29"
 ```
-┌─────────────────────────────────────────────┐
-│  emercoin_coincontrol_cli.py (Hauptprogramm) │
-├─────────────────────────────────────────────┤
-│                                               │
-│  ┌─────────────────────────────────────┐    │
-│  │ Klasse: EmercoinRPC                │    │
-│  │ ─────────────────────────────────── │    │
-│  │ • call(method, params)             │    │
-│  │ • JSON-RPC Kommunikation            │    │
-│  └─────────────────────────────────────┘    │
-│                   ↓ (über HTTP)              │
-│         Emercoin RPC-Daemon                  │
-│            (emercoind, Port 16662)           │
-│                                               │
-│  ┌─────────────────────────────────────┐    │
-│  │ Klasse: CoinControlCLI              │    │
-│  │ ─────────────────────────────────── │    │
-│  │ • connect_to_wallet()              │    │
-│  │ • select_source_address()          │    │
-│  │ • select_utxos()                   │    │
-│  │ • create_transaction()             │    │
-│  │ • sign_and_send_transaction()      │    │
-│  │ • run() [Hauptschleife]            │    │
-│  └─────────────────────────────────────┘    │
-└─────────────────────────────────────────────┘
+- Wird automatisch als **Option 1** bei der Change-Adresse-Eingabe angeboten
+- Falls Benutzer die Eingabe überspringt, wird diese Adresse verwendet
+- Kann jederzeit überschrieben werden mit **Option 2** (Quell-Adresse) oder **Option 3** (eigene Adresse)
+- Verhindert Fehler durch vergessene Change-Adresse-Eingabe
+
+### Multiple UTXO-Auswahl
+Das Programm unterstützt die Auswahl von **mehreren UTXOs in einer Transaktion**:
+
+1. **Modus 1:** Einzelne UTXOs - Benutzer wählt UTXOs nach Nummer
+2. **Modus 2:** Alle UTXOs - Kombiniert alle verfügbaren UTXOs automatisch
+3. **Modus 3:** Nach Betrag - Intelligente Auswahl nach Größe
+
+Die Gebührenberechnung berücksichtigt automatisch die Anzahl der Inputs:
+```python
+estimated_size = len(inputs) * 180 + 2 * 34 + 10
 ```
 
 ---
