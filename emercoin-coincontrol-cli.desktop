@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Emercoin Coin Control CLI
+Comment=Create Emercoin transactions with manual UTXO selection
+Icon=system-run
+Exec=bash -c 'cd /home/bitkiller/Projekte/VisualStudioCode/Emercoin-Testnet && ./coincontrol.sh'
+Terminal=true
+Categories=Utility;Finance;
+Keywords=emercoin;coincontrol;transaction;utxo;blockchain;
+MimeType=
+Path=/home/bitkiller/Projekte/VisualStudioCode/Emercoin-Testnet
+X-KeepTerminalOpen=true
