@@ -21,7 +21,7 @@ class EmercoinGUI:
         self.root.configure(bg="#2c3e50")
 
         # Icon für das Fenster setzen
-        icon_path = "/home/bitkiller/Projekte/VisualStudioCode/Emercoin-Testnet/blockchain_wallet2.png"
+        icon_path = "/home/bitkiller/Projekte/VisualStudioCode/Emercoin-Testnet/blockchain_2blocks.png"
         if os.path.exists(icon_path):
             try:
                 self.icon_img = tk.PhotoImage(file=icon_path)
@@ -283,10 +283,16 @@ class EmercoinGUI:
             if height > 10:
                 h1_hash = self.call_rpc("getblockhash", [height])
                 h2_hash = self.call_rpc("getblockhash", [height - 10])
-                t1 = self.call_rpc("getblock", [h1_hash]).get("time")  # type: ignore
-                t2 = self.call_rpc("getblock", [h2_hash]).get("time")  # type: ignore
-                avg = (t1 - t2) / 10
-                self.avg_time_label.config(text=f"{avg:.1f} s")
+                b1 = self.call_rpc("getblock", [h1_hash])
+                b2 = self.call_rpc("getblock", [h2_hash])
+
+                if b1 and b2:
+                    t1 = b1.get("time", 0)
+                    t2 = b2.get("time", 0)
+                    avg = (t1 - t2) / 10
+                    self.avg_time_label.config(text=f"{avg:.1f} s")
+                else:
+                    self.avg_time_label.config(text="N/A")
             else:
                 self.avg_time_label.config(text="N/A")
 
@@ -359,7 +365,7 @@ class EmercoinGUI:
                     ts = datetime.datetime.strptime(ts_str, "%Y-%m-%d %H:%M:%S")
                     if ts < thirty_mins_ago:
                         break
-                except:
+                except (ValueError, TypeError):
                     pass  # Zeilen ohne Zeitstempel einbeziehen
                 output_lines.append(line)
 

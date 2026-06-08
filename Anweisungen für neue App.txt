@@ -9,4 +9,5 @@ Bitte erweitere die Emercoin Testnetz-App um weitere Funktionen. Füge einen zus
 Icon in Statusleiste um ausführen der App
 mehr infos über die angezeigten transaktionen (txid, type, version, size,vsize,weight, wie viele vin und vout)
 
-
+TX-Skript:
+Erstelle mir ein Kommandozeilen Programm, dass mir die erstellung einer transaktion mit manueller UTXO Auswahl (Coin Control) an eine andere Emercoin Adresse vereinfacht und benutzerfreundlicher macht durch programmseitigem Abfragen der benötigten Parameter. Im Hintergrund meines Computers wird das "emer-testchain_dashbiard.py" Skript laufen (siehe anhang) über die der Zugriff auf meine Wallet und Emercoin Blockchain (testnet) möglich ist. und in der angehängten .pdf datei ist eine grobe erklärung, wie und was das Kommandozeilenprogramm machen soll.
