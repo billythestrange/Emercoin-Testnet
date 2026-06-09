@@ -21,7 +21,7 @@ class EmercoinGUI:
         self.root.configure(bg="#2c3e50")
 
         # Icon für das Fenster setzen
-        icon_path = "/home/bitkiller/Projekte/VisualStudioCode/Emercoin-Testnet/blockchain_2blocks.png"
+        icon_path = "/home/bitkiller/Projekte/VisualStudioCode/Emercoin-Testnet/blockchain_kreis_gelb.png"
         if os.path.exists(icon_path):
             try:
                 self.icon_img = tk.PhotoImage(file=icon_path)
@@ -353,6 +353,11 @@ class EmercoinGUI:
             output_lines = []
             for line in reversed(lines):
                 if len(output_lines) >= 3500:
+                    break
+
+                # Abbruch, wenn der Start des Daemons erreicht wurde (aktuelle Sitzung)
+                if "Emercoin Core version" in line:
+                    output_lines.append(line)
                     break
 
                 # Filtere interne RPC POST Requests heraus (Dashboard-Traffic)
